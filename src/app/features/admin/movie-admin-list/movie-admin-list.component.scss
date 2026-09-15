@@ -1,0 +1,37 @@
+.admin-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.admin-list__new {
+  background: #ffb703;
+  color: #1b1b24;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.admin-list__error {
+  color: #ff8b8b;
+}
+
+.admin-list__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+
+  a,
+  button {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #3a3a4a;
+    background: #1e1e28;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.55rem;
+    cursor: pointer;
+  }
+}

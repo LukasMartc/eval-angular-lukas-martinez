@@ -1,0 +1,13 @@
+.lost-reel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  gap: 1rem;
+
+  a {
+    color: #ffb703;
+  }
+}

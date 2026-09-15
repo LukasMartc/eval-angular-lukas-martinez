@@ -1,0 +1,30 @@
+<header class="app-header">
+  <a class="app-header__brand" routerLink="/movies">🎬 Cartelera</a>
+
+  <nav class="app-header__nav">
+    <a routerLink="/movies" routerLinkActive="is-active">Catálogo</a>
+    @if (isAuthenticated()) {
+      <a routerLink="/admin" routerLinkActive="is-active">Administración</a>
+    }
+  </nav>
+
+  <div class="app-header__spotlight">
+    <span title="Cantidad de películas destacadas">⭐ {{ spotlightTally() }}</span>
+    <button type="button" (click)="toggleLayoutMode()">
+      Vista: {{ layoutMode() === 'reel' ? 'Rejilla' : 'Lista' }}
+    </button>
+  </div>
+
+  <div class="app-header__session">
+    @if ((currentUser$ | async); as user) {
+      <span>Hola, {{ user.name }}</span>
+      <button type="button" (click)="logout()">Cerrar sesión</button>
+    } @else {
+      <a routerLink="/login">Iniciar sesión</a>
+    }
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>

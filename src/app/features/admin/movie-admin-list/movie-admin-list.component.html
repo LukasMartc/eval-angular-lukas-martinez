@@ -1,0 +1,21 @@
+<section class="admin-list">
+  <header class="admin-list__header">
+    <h1>Panel de administración</h1>
+    <a routerLink="/admin/new" class="admin-list__new">+ Nueva película</a>
+  </header>
+
+  @if (moviesResource.isLoading()) {
+    <p>Cargando películas…</p>
+  } @else if (moviesResource.error()) {
+    <p class="admin-list__error">No se pudo cargar el catálogo administrado.</p>
+  } @else {
+    <div class="admin-list__grid">
+      @for (movie of moviesResource.value(); track movie.id) {
+        <app-reel-card [movie]="movie">
+          <a [routerLink]="['/admin/edit', movie.id]">Editar</a>
+          <button type="button" (click)="discardMovie(movie.id)">Eliminar</button>
+        </app-reel-card>
+      }
+    </div>
+  }
+</section>

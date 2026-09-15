@@ -1,0 +1,101 @@
+.reel-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface, #1b1b24);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  color: inherit;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  &--compact {
+    flex-direction: row;
+
+    .reel-card__poster {
+      width: 96px;
+      flex-shrink: 0;
+      aspect-ratio: 2 / 3;
+    }
+  }
+}
+
+.reel-card__link {
+  display: flex;
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+}
+
+.reel-card--compact .reel-card__link {
+  flex-direction: row;
+}
+
+.reel-card:not(.reel-card--compact) .reel-card__link {
+  flex-direction: column;
+}
+
+.reel-card__poster {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.reel-card__badge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #ffb703;
+  color: #1b1b24;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.reel-card__body {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.reel-card__title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.reel-card__meta {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+
+.reel-card__star {
+  margin: 0 0.75rem 0.5rem;
+  border: 1px solid #ffb703;
+  background: transparent;
+  color: #ffb703;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.reel-card__actions {
+  padding: 0 0.75rem 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}

@@ -1,0 +1,102 @@
+<section class="movie-form">
+  <h1>{{ isEditMode() ? 'Editar película' : 'Nueva película' }}</h1>
+
+  @if (movieResource.isLoading()) {
+    <p>Cargando ficha…</p>
+  } @else {
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label>
+        Título
+        <input type="text" formControlName="title" />
+      </label>
+      @if (form.controls.title.invalid && form.controls.title.touched) {
+        <p class="error">El título es obligatorio (mínimo 2 caracteres).</p>
+      }
+
+      <div class="movie-form__row">
+        <label>
+          Año de estreno
+          <input type="number" formControlName="releaseYear" />
+        </label>
+        @if (form.controls.releaseYear.hasError('blockFutureYear')) {
+          <p class="error">El año no puede ser posterior al actual.</p>
+        }
+
+        <label>
+          Calificación (0-10)
+          <input type="number" formControlName="rating" min="0" max="10" step="0.1" />
+        </label>
+      </div>
+
+      <div class="movie-form__row">
+        <label>
+          Género
+          <select formControlName="genre">
+            <option value="" disabled>Selecciona un género</option>
+            @for (option of genreOptions; track option.value) {
+              <option [value]="option.value">{{ option.label }}</option>
+            }
+          </select>
+        </label>
+
+        <label>
+          Clasificación por edad
+          <select formControlName="ageRating">
+            <option value="" disabled>Selecciona primero un género</option>
+            @for (rating of ageRatingOptions(); track rating) {
+              <option [value]="rating">{{ rating }}</option>
+            }
+          </select>
+        </label>
+      </div>
+
+      <label>
+        Sinopsis
+        <textarea formControlName="synopsis" rows="3"></textarea>
+      </label>
+      @if (form.controls.synopsis.invalid && form.controls.synopsis.touched) {
+        <p class="error">La sinopsis debe tener al menos 10 caracteres.</p>
+      }
+
+      <label class="movie-form__checkbox">
+        <input type="checkbox" formControlName="isFeatured" />
+        Marcar como destacada
+      </label>
+
+      <fieldset class="movie-form__cast">
+        <legend>Reparto</legend>
+        @for (control of castLineup.controls; track $index) {
+          <div class="movie-form__cast-row">
+            <input type="text" [formControl]="control" placeholder="Nombre del actor/actriz" />
+            <button type="button" (click)="removeCastMember($index)" [disabled]="castLineup.length === 1">
+              Quitar
+            </button>
+          </div>
+        }
+        <button type="button" (click)="addCastMember()">+ Agregar actor</button>
+      </fieldset>
+
+      <div class="movie-form__poster">
+        <label>
+          URL del póster
+          <input type="url" formControlName="posterUrl" (change)="onPosterUrlChange()" />
+        </label>
+        <label>
+          O sube una imagen
+          <input type="file" accept="image/*" (change)="onPosterSelected($event)" />
+        </label>
+        @if (posterPreview()) {
+          <img class="movie-form__preview" [src]="posterPreview()" alt="Previsualización del póster" />
+        }
+      </div>
+
+      @if (savedMessage()) {
+        <p class="movie-form__success">{{ savedMessage() }}</p>
+      }
+
+      <button type="submit" class="movie-form__submit" [disabled]="isSaving()">
+        {{ isSaving() ? 'Guardando…' : 'Guardar ficha' }}
+      </button>
+    </form>
+  }
+</section>

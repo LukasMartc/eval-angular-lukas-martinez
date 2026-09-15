@@ -1,0 +1,42 @@
+<section class="movie-detail">
+  <a routerLink="/movies" class="movie-detail__back">← Volver al catálogo</a>
+
+  @if (movieResource.isLoading()) {
+    <p class="movie-detail__status">Cargando ficha…</p>
+  } @else if (movieResource.error()) {
+    <p class="movie-detail__status movie-detail__status--error">No pudimos cargar esta película.</p>
+  } @else if (movieResource.value(); as movie) {
+    <article class="movie-detail__content">
+      <img class="movie-detail__poster" [src]="movie.posterUrl" [alt]="'Póster de ' + movie.title" />
+
+      <div class="movie-detail__info">
+        <h1>{{ movie.title }}</h1>
+        <p class="movie-detail__meta">
+          <span>{{ movie.releaseYear | appReleaseYear }}</span>
+          <span>{{ movie.genre }}</span>
+          <span>{{ movie.ageRating }}</span>
+          <span>{{ movie.rating | appRating }}</span>
+          @if (movie.isFeatured) {
+            <span class="badge">Destacada</span>
+          }
+        </p>
+        <p class="movie-detail__synopsis">{{ movie.synopsis }}</p>
+
+        @defer (on viewport) {
+          <div class="movie-detail__cast">
+            <h2>Reparto</h2>
+            <ul>
+              @for (actor of movie.cast; track actor) {
+                <li>{{ actor }}</li>
+              }
+            </ul>
+          </div>
+        } @loading {
+          <p>Cargando reparto…</p>
+        } @placeholder {
+          <p class="movie-detail__cast-placeholder">Desplázate para ver el reparto completo.</p>
+        }
+      </div>
+    </article>
+  }
+</section>

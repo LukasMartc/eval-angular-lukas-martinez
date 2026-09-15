@@ -1,0 +1,27 @@
+<article class="reel-card" [class.reel-card--compact]="compact()">
+  <a class="reel-card__link" [routerLink]="['/movies', movie().id]">
+    <div class="reel-card__poster">
+      <img [src]="movie().posterUrl" [alt]="'Póster de ' + movie().title" loading="lazy" />
+      @if (movie().isFeatured) {
+        <span class="reel-card__badge">Destacada</span>
+      }
+    </div>
+    <div class="reel-card__body">
+      <h3 class="reel-card__title" [title]="movie().title">{{ movie().title | appTitleEllipsis }}</h3>
+      <p class="reel-card__meta">
+        <span>{{ movie().releaseYear | appReleaseYear }}</span>
+        <span>{{ movie().rating | appRating }}</span>
+      </p>
+    </div>
+  </a>
+
+  @if (canManage()) {
+    <button type="button" class="reel-card__star" (click)="onToggleFeatured($event)">
+      {{ movie().isFeatured ? '★ Quitar de destacadas' : '☆ Destacar' }}
+    </button>
+  }
+
+  <div class="reel-card__actions">
+    <ng-content></ng-content>
+  </div>
+</article>

@@ -1,0 +1,227 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Fragmentos de Acero",
+      "releaseYear": 2022,
+      "genre": "accion",
+      "ageRating": "+16",
+      "synopsis": "Un ex agente debe infiltrarse en su antigua organización para detener un golpe que amenaza la ciudad.",
+      "posterUrl": "https://picsum.photos/seed/fragmentos-de-acero/400/600",
+      "rating": 7.8,
+      "isFeatured": true,
+      "cast": [
+        "Marco Silva",
+        "Elena Duarte",
+        "Ricardo Font"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Risas en el Andén 9",
+      "releaseYear": 2019,
+      "genre": "comedia",
+      "ageRating": "+7",
+      "synopsis": "Dos desconocidos comparten un vagón de tren y una serie de malentendidos que cambian sus vidas.",
+      "posterUrl": "https://picsum.photos/seed/risas-anden-9/400/600",
+      "rating": 6.9,
+      "isFeatured": false,
+      "cast": [
+        "Valentina Rojas",
+        "Tomás Ibarra"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "El Peso del Silencio",
+      "releaseYear": 2021,
+      "genre": "drama",
+      "ageRating": "+13",
+      "synopsis": "Una familia enfrenta la enfermedad de su hija menor mientras intenta mantenerse unida.",
+      "posterUrl": "https://picsum.photos/seed/peso-del-silencio/400/600",
+      "rating": 8.4,
+      "isFeatured": true,
+      "cast": [
+        "Camila Vidal",
+        "Andrés Peña",
+        "Lucía Ferreyra"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "La Casa al Final del Bosque",
+      "releaseYear": 2020,
+      "genre": "terror",
+      "ageRating": "+18",
+      "synopsis": "Un grupo de amigos descubre que la cabaña donde pasarán el fin de semana esconde un secreto siniestro.",
+      "posterUrl": "https://picsum.photos/seed/casa-final-bosque/400/600",
+      "rating": 6.2,
+      "isFeatured": false,
+      "cast": [
+        "Nicolás Bravo",
+        "Sofía Herrera"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Órbita Cero",
+      "releaseYear": 2023,
+      "genre": "ciencia-ficcion",
+      "ageRating": "+13",
+      "synopsis": "La tripulación de una estación espacial debe decidir si regresa a una Tierra que ya no reconoce.",
+      "posterUrl": "https://picsum.photos/seed/orbita-cero/400/600",
+      "rating": 8.1,
+      "isFeatured": true,
+      "cast": [
+        "Diego Salinas",
+        "Martina Correa",
+        "Iván Reyes"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "El Vuelo de Nube",
+      "releaseYear": 2018,
+      "genre": "animacion",
+      "ageRating": "ATP",
+      "synopsis": "Una pequeña nube aprende a volar sola cuando se separa del resto de su familia durante una tormenta.",
+      "posterUrl": "https://picsum.photos/seed/vuelo-de-nube/400/600",
+      "rating": 7.3,
+      "isFeatured": false,
+      "cast": [
+        "Voz: Paula Nieto",
+        "Voz: Federico Lamas"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Contrarreloj",
+      "releaseYear": 2017,
+      "genre": "accion",
+      "ageRating": "+16",
+      "synopsis": "Un corredor de bolsa se convierte en el objetivo de una organización criminal tras descubrir un fraude.",
+      "posterUrl": "https://picsum.photos/seed/contrarreloj/400/600",
+      "rating": 6.7,
+      "isFeatured": false,
+      "cast": [
+        "Julián Osorio",
+        "Renata Campos"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Vecinos Insoportables",
+      "releaseYear": 2016,
+      "genre": "comedia",
+      "ageRating": "+13",
+      "synopsis": "Una pareja recién casada compite con sus vecinos ruidosos en una guerra de bromas cada vez más absurda.",
+      "posterUrl": "https://picsum.photos/seed/vecinos-insoportables/400/600",
+      "rating": 5.9,
+      "isFeatured": false,
+      "cast": [
+        "Ana Belén Ruiz",
+        "Gonzalo Prat"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Cartas que Nunca Envié",
+      "releaseYear": 2015,
+      "genre": "drama",
+      "ageRating": "+13",
+      "synopsis": "Tras la muerte de su madre, una mujer descubre un baúl de cartas que reescriben la historia de su familia.",
+      "posterUrl": "https://picsum.photos/seed/cartas-nunca-envie/400/600",
+      "rating": 7.6,
+      "isFeatured": false,
+      "cast": [
+        "Isabel Montes",
+        "Rafael Duque"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "El Sótano de la Calle Fría",
+      "releaseYear": 2024,
+      "genre": "terror",
+      "ageRating": "+18",
+      "synopsis": "Una periodista investiga desapariciones que llevan todas al mismo edificio abandonado.",
+      "posterUrl": "https://picsum.photos/seed/sotano-calle-fria/400/600",
+      "rating": 6.5,
+      "isFeatured": true,
+      "cast": [
+        "Bárbara Solís",
+        "Emilio Castro",
+        "Norma Vega"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Código Andrómeda",
+      "releaseYear": 2014,
+      "genre": "ciencia-ficcion",
+      "ageRating": "+16",
+      "synopsis": "Una inteligencia artificial escapa de su laboratorio y busca entender qué significa ser libre.",
+      "posterUrl": "https://picsum.photos/seed/codigo-andromeda/400/600",
+      "rating": 7,
+      "isFeatured": false,
+      "cast": [
+        "Simón Aguilar",
+        "Fernanda Ríos"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Migas de Pan y Estrellas",
+      "releaseYear": 2021,
+      "genre": "animacion",
+      "ageRating": "+7",
+      "synopsis": "Un panadero y su nieta emprenden un viaje mágico para recuperar la receta que salvará su pueblo.",
+      "posterUrl": "https://picsum.photos/seed/migas-pan-estrellas/400/600",
+      "rating": 7.9,
+      "isFeatured": true,
+      "cast": [
+        "Voz: Clara Miño",
+        "Voz: Hugo Beltrán"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Frontera Sur",
+      "releaseYear": 2013,
+      "genre": "drama",
+      "ageRating": "+16",
+      "synopsis": "Dos hermanos separados por la migración se reencuentran veinte años después en circunstancias inesperadas.",
+      "posterUrl": "https://picsum.photos/seed/frontera-sur/400/600",
+      "rating": 8,
+      "isFeatured": false,
+      "cast": [
+        "Pedro Landa",
+        "Mariana Ochoa"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Zona de Impacto",
+      "releaseYear": 2025,
+      "genre": "accion",
+      "ageRating": "+18",
+      "synopsis": "Un equipo de rescate debe evacuar una ciudad costera antes de que un desastre natural la destruya.",
+      "posterUrl": "https://picsum.photos/seed/zona-de-impacto/400/600",
+      "rating": 7.2,
+      "isFeatured": false,
+      "cast": [
+        "Leandro Cabrera",
+        "Ximena Ponce",
+        "Adrián Solano"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@evaluacion.com",
+      "password": "$2b$10$vCGggF1lVtzNwSHI591xXuWBsOKJcxOxXA/KcV.dK3NEXncgAV.wC",
+      "name": "Admin"
+    }
+  ]
+}

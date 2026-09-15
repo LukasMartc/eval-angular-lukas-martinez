@@ -1,0 +1,55 @@
+<section class="movie-list">
+  <div class="movie-list__search">
+    <input
+      type="search"
+      [formControl]="searchControl"
+      placeholder="Buscar película por título…"
+      aria-label="Buscar por título"
+    />
+
+    @if (history().length > 0) {
+      <div class="movie-list__history">
+        <span>Búsquedas recientes:</span>
+        @for (term of history(); track term) {
+          <button type="button" class="chip" (click)="applyHistoryTerm(term)">{{ term }}</button>
+        }
+        <button type="button" class="chip chip--clear" (click)="clearHistory()">Limpiar</button>
+      </div>
+    }
+  </div>
+
+  @if (moviesResource.isLoading()) {
+    <p class="movie-list__status">Cargando cartelera…</p>
+  } @else if (moviesResource.error()) {
+    <p class="movie-list__status movie-list__status--error">
+      Ocurrió un error al cargar las películas. Intenta nuevamente.
+    </p>
+  } @else if (filteredMovies().length === 0) {
+    <p class="movie-list__status">No se encontraron películas para tu búsqueda.</p>
+  } @else {
+    @switch (layoutMode()) {
+      @case ('reel') {
+        <div class="movie-list__grid">
+          @for (movie of filteredMovies(); track movie.id) {
+            <app-reel-card [movie]="movie" [canManage]="isAuthenticated()" (toggleFeatured)="onToggleFeatured($event)" />
+          }
+        </div>
+      }
+      @case ('strip') {
+        <div class="movie-list__strip">
+          @for (movie of filteredMovies(); track movie.id) {
+            <app-reel-card
+              [movie]="movie"
+              [compact]="true"
+              [canManage]="isAuthenticated()"
+              (toggleFeatured)="onToggleFeatured($event)"
+            />
+          }
+        </div>
+      }
+      @default {
+        <p class="movie-list__status">Selecciona un modo de vista.</p>
+      }
+    }
+  }
+</section>
